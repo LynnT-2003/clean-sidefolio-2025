@@ -1,0 +1,55 @@
+import { BlogLayout } from "@/components/BlogLayout";
+
+import { CodeWindow } from "@/components/CodeWindow";
+
+export const meta = {
+  date: "2024-12-12",
+  title: "The right approach to responsive websites",
+  description:
+    "Responsive websites are a necessity to all businesses and products. However, it is still a common obstacle among a team of designers and developers, working towards achieving a cohesive responsive web application.",
+  image:
+    "https://images.unsplash.com/photo-1664575262619-b28fef7a40a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2332&q=80",
+  tags: ["Frontend", "UI / Deisgn", "Team Planning"],
+};
+
+export default (props) => <BlogLayout meta={meta} {...props} />;
+
+Responsive websites always stand out more professionally than the standard ones, and have become a necessity across almost every business and products. However, from my experience in working with startups, I have always found that there is an unavoidable friction between developers and designers working towards achieving responsiveness.
+
+First of all, one thing has to be made clear – it is ALWAYS best to have a complete backbone design of the project before developing a site. And even better if every breakpoint across all devices are made ready. This is so that the codebase can be maintained in a scalable architecture. However, obstacles exist within both developers and designers at this stage.
+
+In most realistic cases, the designer will not often have the finalized design ready, let alone handle all breakpoints, while the developer needs them to make UI components and styles dynamically responsive to different screen sizes. If the developer waits for the design to be completed, they risk being idle during the initial phase of the sprints. Conversely, if development starts with unvalidated designs, both the developers and the codebase suffer as the project progresses with various UI changes.
+
+In this article, I will address these challenges in detail and explore strategies to improve collaboration between developers and designers, ensuring a smoother and more efficient process when building responsive websites.
+
+## Idle Developers During the Design Phase
+
+In an ideal agile workflow, developers should start building as soon as possible, iterating alongside the design team. However, if the developer is expected to wait for the final design, they risk being idle during the early phases of a sprint.
+
+Developers and designers should collaborate early by working together on the layout framework and basic interactions before the designs are fully finalized. Developers can begin by building out the layout grid, reusable components, or core styles like typography and color schemes. By working in parallel, both teams can make progress simultaneously, reducing idle time and ensuring that the codebase remains flexible enough to accommodate changes in the design.
+
+## Unfinalized Designs and the Developer's Dilemma
+
+In most realistic scenarios, designers don’t have a complete, finalized design ready at the start of a project. They may still be iterating on layouts or waiting for stakeholder feedback, making it difficult for developers to proceed with a clear vision. Without this clarity, developers often face the challenge of building UI components dynamically, trying to ensure they will work across all screen sizes.
+
+Developers are forced to either wait for the final designs (leading to idle time) or build based on incomplete or evolving concepts (which leads to poor code quality, inefficiency, and rework).
+
+A potential solution is to use low-fidelity prototypes or design mockups early in the process. These don't need to be fully polished, but they can give developers enough of a direction to start building components with flexible layouts. Additionally, design guidelines such as color schemes, typography, and spacing can help the developer work with a rough idea of the intended look and feel.
+
+## Unvalidated Designs Lead to Rework
+
+One of the major risks of starting development with unvalidated designs is the potential for frequent changes. As the design evolves, developers are often forced to revisit their code, undoing work or reworking components to accommodate changes that weren’t initially planned.
+
+The problem: Unvalidated designs often lead to scope creep and rework, especially when designs are only partially tested or based on initial assumptions. When changes are made to the design, developers must adjust code to accommodate these updates, which increases both the workload and the chances of introducing errors.
+
+Solution: One approach is to use iterative design sprints with constant feedback loops. Designers can validate their designs by testing early versions with real users or stakeholders. Meanwhile, developers should work with "living documents" or design systems that evolve over time, ensuring the UI components they build remain modular and easy to adapt when designs change.
+
+## Addressing the Problem Constructively
+
+Here are some more ideas for how both developers and designers can collaborate effectively, despite these challenges:
+
+1. Agile Design and Development Integration: Developers and designers should work closely from the beginning of the project. Regular communication and collaboration, even if the design is not fully finalized, help ensure that both teams are aligned. This way, designers can provide feedback and updates, while developers can continue building flexible, responsive components.
+
+2. Early Prototyping and User Testing: Designers can create low-fidelity prototypes or wireframes that showcase how the design will adapt across devices. These prototypes don’t need to be perfect but provide a tangible reference point for developers to start working with. Prototypes can be tested early with users to validate assumptions before the final design is built, ensuring both teams are aligned in terms of functionality and design goals.
+
+By finding a balance between flexibility and structure, both developers and designers can work more efficiently, avoiding friction and ensuring the project stays on track. While challenges will always exist, collaboration and open communication can minimize the impact of these issues, leading to better products in less time.
