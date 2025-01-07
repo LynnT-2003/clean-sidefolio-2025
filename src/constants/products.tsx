@@ -46,10 +46,10 @@ export const products = [
         </p>
         <p>
           Designed and developed a fully mobile-responsive web application that
-          transforms and generates a user's portrait into a Cartoon-Styled
+          transforms and generates a user&rsquo;s portrait into a Cartoon-Styled
           Christmas theme through a Gacha system. The project featuered 4
           models, turning users into either an Elf, Reindeer, Santa, or a rare
-          'Christmas Padoru' cartoon character.
+          &rsquo;Christmas Padoru&rsquo; cartoon character.
         </p>
         <p>
           Designed and built a complete Image Storage Architecture to store
@@ -93,9 +93,9 @@ export const products = [
           queries and additional filter parameters. By leveraging NLP, the
           search functionality could intelligently interpret user queries,
           accommodating variations in phrasing and delivering accurate results.
-          For example, queries like "2-bedroom apartment near BTS" or "houses
-          under $500K with a garden" were seamlessly processed, offering a more
-          natural and intuitive experience for users.{" "}
+          For example, queries like &quot;2-bedroom apartment near BTS&quot; or
+          &quot;houses under $500K with a garden&quot; were seamlessly
+          processed, offering a more natural and intuitive experience for users.{" "}
         </p>
         <p>
           Overall, the clients were thrilled with the results, praising the
@@ -105,10 +105,10 @@ export const products = [
           expectations.
         </p>
         <p>
-          Delivering such impactful results was a testament to the team's
+          Delivering such impactful results was a testament to the team&rsquo;s
           dedication and strategic approach, as well as the value of agile
           methodologies in adapting to challenges and ensuring continuous
-          improvement throughout the project's lifecycle.
+          improvement throughout the project&rsquo;s lifecycle.
         </p>
       </div>
     ),
