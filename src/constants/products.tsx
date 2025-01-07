@@ -28,10 +28,10 @@ import gsap2 from "public/images/gsap2.png";
 
 export const products = [
   {
-    href: "https://aceternity.com",
-    title: "PrismaForge",
+    href: "https://prismaforge.vercel.app/",
+    title: "ChristmasForge",
     description:
-      "An AI powered web application to generate and transform images using custom-trained Stable Diffusion Models through text-prompts and image uploads.",
+      "An AI powered web application to generate and transform images using custom-trained Stable Diffusion Models through image uploads.",
     thumbnail: prismaforge,
     images: [prismaforge, prismaforge2],
     stack: ["Nextjs", "Tailwindcss", "Firebase", "MongoDB", "AI"],
@@ -39,21 +39,31 @@ export const products = [
     content: (
       <div>
         <p>
-          Sit eiusmod ex mollit sit quis ad deserunt. Sint aliqua aliqua ullamco
-          dolore nulla amet tempor sunt est ipsum. Dolor laborum eiusmod
-          cupidatat consectetur velit ipsum. Deserunt nisi in culpa laboris
-          cupidatat elit velit aute mollit nisi. Officia ad exercitation laboris
-          non cupidatat duis esse velit ut culpa et.{" "}
+          Worked as a team of 4 over a quick course of 2 months to come up with
+          an MVP product showcasing the potential of generative AI. Adopted an
+          agile methodology to ensure improved results are always delivered in
+          time.
         </p>
         <p>
-          Exercitation pariatur enim occaecat adipisicing nostrud adipisicing
-          Lorem tempor ullamco exercitation quis et dolor sint. Adipisicing sunt
-          sit aute fugiat incididunt nostrud consequat proident fugiat id.
-          Officia aliquip laborum labore eu culpa dolor reprehenderit eu ex enim
-          reprehenderit. Cillum Lorem veniam eu magna exercitation.
-          Reprehenderit adipisicing minim et officia enim et veniam Lorem
-          excepteur velit adipisicing et Lorem magna.
-        </p>{" "}
+          Designed and developed a fully mobile-responsive web application that
+          transforms and generates a user's portrait into a Cartoon-Styled
+          Christmas theme through a Gacha system. The project featuered 4
+          models, turning users into either an Elf, Reindeer, Santa, or a rare
+          'Christmas Padoru' cartoon character.
+        </p>
+        <p>
+          Designed and built a complete Image Storage Architecture to store
+          image history for signed in users featuring Firebase User
+          Authentication, Cloudinary Image Storage, and MongoDB Cloud Database
+          Storage to ensure a secure, scalable, and seamless experience for
+          users.
+        </p>
+        <p>
+          The app was showcased at Baksters Office during the company&rsquo;s
+          Christmas Showcase. Overall, users enjoyed the app and provided
+          positive feedback, including comments such as “The app is very good”
+          and “The AI-generated image looks much better than the real image.”
+        </p>
       </div>
     ),
   },
@@ -61,29 +71,45 @@ export const products = [
     href: "https://mahavertex.com",
     title: "MahaVertex Realty",
     description:
-      "Fully responsive real estate website template built with Tailwind CSS for a modern real estate company residing in Thailand, catered to the Burmese community. Built using Next.js, Tailwind CSS, Sanity and Google Maps API supporting fluid mobile responsiveness and advanced search functionalites.",
+      "Fully mobile-responsive real estate website for a modern real estate company residing in Thailand, catered to the Burmese community.",
     thumbnail: mahavertex,
     images: [mahavertex, mahavertex1],
     stack: ["Nextjs", "Tailwindcss", "Sanity", "Google Maps API"],
     slug: "mahavertex",
     content: (
       <div>
+        <p> </p>
         <p>
-          Sit eiusmod ex mollit sit quis ad deserunt. Sint aliqua aliqua ullamco
-          dolore nulla amet tempor sunt est ipsum. Dolor laborum eiusmod
-          cupidatat consectetur velit ipsum. Deserunt nisi in culpa laboris
-          cupidatat elit velit aute mollit nisi. Officia ad exercitation laboris
-          non cupidatat duis esse velit ut culpa et.{" "}
+          Worked as a team of 3 over a course of 5-6 months, leading the project
+          as a lead fontend developer as well as a project manager in order to
+          hit deadlines with the highest efficiency. Adopted an agile
+          methodology to ensure improved results are always delivered in time,
+          and visible progress is made every sprint alongside client validation.{" "}
         </p>
         <p>
-          Exercitation pariatur enim occaecat adipisicing nostrud adipisicing
-          Lorem tempor ullamco exercitation quis et dolor sint. Adipisicing sunt
-          sit aute fugiat incididunt nostrud consequat proident fugiat id.
-          Officia aliquip laborum labore eu culpa dolor reprehenderit eu ex enim
-          reprehenderit. Cillum Lorem veniam eu magna exercitation.
-          Reprehenderit adipisicing minim et officia enim et veniam Lorem
-          excepteur velit adipisicing et Lorem magna.
-        </p>{" "}
+          The MVP of this project was the advanced search algorithm I introduced
+          to the team and client, successfully building the added feature within
+          a limited period of time using NLP and REGEX alongside location based
+          queries and additional filter parameters. By leveraging NLP, the
+          search functionality could intelligently interpret user queries,
+          accommodating variations in phrasing and delivering accurate results.
+          For example, queries like "2-bedroom apartment near BTS" or "houses
+          under $500K with a garden" were seamlessly processed, offering a more
+          natural and intuitive experience for users.{" "}
+        </p>
+        <p>
+          Overall, the clients were thrilled with the results, praising the
+          intuitive design, advanced search functionality, and responsiveness of
+          the platform. They expressed immense satisfaction with how the
+          features effectively addressed their business needs and exceeded their
+          expectations.
+        </p>
+        <p>
+          Delivering such impactful results was a testament to the team's
+          dedication and strategic approach, as well as the value of agile
+          methodologies in adapting to challenges and ensuring continuous
+          improvement throughout the project's lifecycle.
+        </p>
       </div>
     ),
   },
@@ -98,22 +124,7 @@ export const products = [
     slug: "modern-scrolltrigger",
     content: (
       <div>
-        <p>
-          Sit eiusmod ex mollit sit quis ad deserunt. Sint aliqua aliqua ullamco
-          dolore nulla amet tempor sunt est ipsum. Dolor laborum eiusmod
-          cupidatat consectetur velit ipsum. Deserunt nisi in culpa laboris
-          cupidatat elit velit aute mollit nisi. Officia ad exercitation laboris
-          non cupidatat duis esse velit ut culpa et.{" "}
-        </p>
-        <p>
-          Exercitation pariatur enim occaecat adipisicing nostrud adipisicing
-          Lorem tempor ullamco exercitation quis et dolor sint. Adipisicing sunt
-          sit aute fugiat incididunt nostrud consequat proident fugiat id.
-          Officia aliquip laborum labore eu culpa dolor reprehenderit eu ex enim
-          reprehenderit. Cillum Lorem veniam eu magna exercitation.
-          Reprehenderit adipisicing minim et officia enim et veniam Lorem
-          excepteur velit adipisicing et Lorem magna.
-        </p>{" "}
+        <p></p>
       </div>
     ),
   },
@@ -128,22 +139,7 @@ export const products = [
     slug: "3Dportfolio",
     content: (
       <div>
-        <p>
-          Sit eiusmod ex mollit sit quis ad deserunt. Sint aliqua aliqua ullamco
-          dolore nulla amet tempor sunt est ipsum. Dolor laborum eiusmod
-          cupidatat consectetur velit ipsum. Deserunt nisi in culpa laboris
-          cupidatat elit velit aute mollit nisi. Officia ad exercitation laboris
-          non cupidatat duis esse velit ut culpa et.{" "}
-        </p>
-        <p>
-          Exercitation pariatur enim occaecat adipisicing nostrud adipisicing
-          Lorem tempor ullamco exercitation quis et dolor sint. Adipisicing sunt
-          sit aute fugiat incididunt nostrud consequat proident fugiat id.
-          Officia aliquip laborum labore eu culpa dolor reprehenderit eu ex enim
-          reprehenderit. Cillum Lorem veniam eu magna exercitation.
-          Reprehenderit adipisicing minim et officia enim et veniam Lorem
-          excepteur velit adipisicing et Lorem magna.
-        </p>{" "}
+        <p></p>
       </div>
     ),
   },
@@ -159,22 +155,7 @@ export const products = [
     slug: "cyberpunk",
     content: (
       <div>
-        <p>
-          Sit eiusmod ex mollit sit quis ad deserunt. Sint aliqua aliqua ullamco
-          dolore nulla amet tempor sunt est ipsum. Dolor laborum eiusmod
-          cupidatat consectetur velit ipsum. Deserunt nisi in culpa laboris
-          cupidatat elit velit aute mollit nisi. Officia ad exercitation laboris
-          non cupidatat duis esse velit ut culpa et.{" "}
-        </p>
-        <p>
-          Exercitation pariatur enim occaecat adipisicing nostrud adipisicing
-          Lorem tempor ullamco exercitation quis et dolor sint. Adipisicing sunt
-          sit aute fugiat incididunt nostrud consequat proident fugiat id.
-          Officia aliquip laborum labore eu culpa dolor reprehenderit eu ex enim
-          reprehenderit. Cillum Lorem veniam eu magna exercitation.
-          Reprehenderit adipisicing minim et officia enim et veniam Lorem
-          excepteur velit adipisicing et Lorem magna.
-        </p>{" "}
+        <p></p>
       </div>
     ),
   },
@@ -189,22 +170,7 @@ export const products = [
     slug: "cyberpunk",
     content: (
       <div>
-        <p>
-          Sit eiusmod ex mollit sit quis ad deserunt. Sint aliqua aliqua ullamco
-          dolore nulla amet tempor sunt est ipsum. Dolor laborum eiusmod
-          cupidatat consectetur velit ipsum. Deserunt nisi in culpa laboris
-          cupidatat elit velit aute mollit nisi. Officia ad exercitation laboris
-          non cupidatat duis esse velit ut culpa et.{" "}
-        </p>
-        <p>
-          Exercitation pariatur enim occaecat adipisicing nostrud adipisicing
-          Lorem tempor ullamco exercitation quis et dolor sint. Adipisicing sunt
-          sit aute fugiat incididunt nostrud consequat proident fugiat id.
-          Officia aliquip laborum labore eu culpa dolor reprehenderit eu ex enim
-          reprehenderit. Cillum Lorem veniam eu magna exercitation.
-          Reprehenderit adipisicing minim et officia enim et veniam Lorem
-          excepteur velit adipisicing et Lorem magna.
-        </p>{" "}
+        <p></p>
       </div>
     ),
   },
@@ -219,22 +185,7 @@ export const products = [
     slug: "react-gesture",
     content: (
       <div>
-        <p>
-          Sit eiusmod ex mollit sit quis ad deserunt. Sint aliqua aliqua ullamco
-          dolore nulla amet tempor sunt est ipsum. Dolor laborum eiusmod
-          cupidatat consectetur velit ipsum. Deserunt nisi in culpa laboris
-          cupidatat elit velit aute mollit nisi. Officia ad exercitation laboris
-          non cupidatat duis esse velit ut culpa et.{" "}
-        </p>
-        <p>
-          Exercitation pariatur enim occaecat adipisicing nostrud adipisicing
-          Lorem tempor ullamco exercitation quis et dolor sint. Adipisicing sunt
-          sit aute fugiat incididunt nostrud consequat proident fugiat id.
-          Officia aliquip laborum labore eu culpa dolor reprehenderit eu ex enim
-          reprehenderit. Cillum Lorem veniam eu magna exercitation.
-          Reprehenderit adipisicing minim et officia enim et veniam Lorem
-          excepteur velit adipisicing et Lorem magna.
-        </p>{" "}
+        <p></p>
       </div>
     ),
   },
