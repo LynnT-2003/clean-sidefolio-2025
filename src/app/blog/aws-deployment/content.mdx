@@ -1,0 +1,294 @@
+import { BlogLayout } from "@/components/BlogLayout";
+
+export const meta = {
+  date: "2025-01-26",
+  title: "Deploy your Next.js app to AWS EC2 with CI/CD via GitHub Actions",
+  description: `I was someone who was most comfortable with all my apps being deployed on Vercel for free. But it was then when I decided, that staying in my comfort zone isn't going to get my anywhere new or improve my skills, that I decided to start deploying my NextJS applications on AWS.
+`,
+  image: "https://www.beartai.com/wp-content/uploads/2023/01/aws.jpg",
+  tags: [
+    "nextjs",
+    "aws",
+    "docker",
+    "github",
+    "github actions",
+    "cloud computing",
+  ],
+};
+
+export default (props) => <BlogLayout meta={meta} {...props} />;
+
+Cloud Computing and AWS is a highly valuable skill to start building your profile and career; and it is never too late to start.
+
+## Introduction
+
+In this article, I won't be talking much about why or why you shouldn't deploy your apps on AWS compared to existing hosting services. Instead I will be showing you how the most beginner-friendly way to start deploying your first app onto AWS professionally.
+
+In this tutorial, we will be deploying our Next.js application to AWS EC2 using Docker & GitHub Actions, and also setting up a simple reverse proxy server using NGINX without diving in too much. In a future article, I will be writing on how to fully set up NGINX for custom-named domains and HTTPS transactions.
+
+---
+
+## Setting up our Project
+
+### 1.1. Creating our Next.js App
+
+To get started, we will first need an existing Next.js application. If you don't have one, we can start by creating a new sample app by running the following command in our terminal:
+
+```
+    npx create-next-app@latest nextjs-aws-demo
+```
+
+Once we have our Next.js, just leave it as be for now. We will now move onto our AWS Configuration. In this tutorial, we will be using AWS EC2 for our deployment.
+
+### 1.2. Install Docker
+
+We will be using Docker in this tutorial. Follow these steps to install Docker on your system:
+
+Option 1: Using Homebrew (for macOS)
+
+```
+brew install --cask docker
+```
+
+Option 2: Download Docker Desktop
+
+- <a
+    href="https://www.docker.com/products/docker-desktop/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Download Docker Desktop for Mac
+  </a>
+- <a
+    href="https://www.docker.com/products/docker-desktop/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Download Docker Desktop for Windows
+  </a>
+
+---
+
+## Setting up our AWS Instance
+
+### 2.1. Create an EC2 Instance
+
+Head over to the EC2 Dashboard and launch a new instance.
+Let's name our instance <b>nextjs-aws-demo</b> and select <b>Ubuntu</b>.
+
+We will choose <b>t2.micro</b> as our instance type since it is free for new users.
+
+Add in a <b>key pair</b> for a secure connection. Create a new one if you do not have one.
+
+If you already have an security group of your own, you can <b>Select existing security group</b> and customize the rules to your preferences.
+
+If you do not have one, choose <b>Create security group</b> and select:
+
+<b>
+  - Allow SSH traffic from <i>Anywhere</i>.
+</b>
+
+<b>
+  - Allow HTTP traffic from the Internet<i>.</i>
+</b>
+
+Note: We will not be covering an HTTPS connection in this tutorial.
+
+After successfully launching your new instance, head into your instance click <b>Connect</b>. If you have followed along correctly, you should be able to get a successful connection and gain access to the terminal for your instance in the AWS console.
+
+### 2.2. Install Docker on AWS EC2
+
+```
+# Update and install Docker
+sudo apt-get update && sudo apt-get install -y docker.io
+
+# Start Docker
+sudo systemctl start docker
+
+# Enable Docker to start on boot
+sudo systemctl enable docker
+
+# Adjust Docker socket permissions
+sudo chmod 666 /var/run/docker.sock
+
+# Verify Docker installation
+docker --version
+docker ps
+
+```
+
+---
+
+## 3. Set up Github Actions for Automation
+
+### 3.1. Create a Runner in Github
+
+Go to Settings > Actions > Runners. Then click on <b>New self-hosted runner.</b>:
+
+Follow the documentation provided while moving on with this tutorial.
+
+### 3.2 Set up Runner in AWS
+
+Create a new directory for our runner. Navigate to the directory, install the latest runners package, and extract the package.
+
+```
+mkdir actions-runner && cd actions-runner
+curl -o actions-runner-osx-x64-2.321.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.321.0/actions-runner-osx-x64-2.321.0.tar.gz
+tar xzf ./actions-runner-osx-x64-2.321.0.tar.gz
+```
+
+### 3.3 Configure and Connect Runner
+
+Connect our newly created runner to our AWS console. Make sure to use your Github Repository URL and Token.
+
+```
+./config.sh --url https://github.com/ABC/RepositoryDEF --token ABCDEFGHIJKLMNOP
+```
+
+Give a name for your runner as <b>ec2</b> and set to <b>Default</b> for the rest of the prompts.
+If you have correctly followed along the tutorial so far, congratulations. You should be able to get this result:
+
+```
+--------------------------------------------------------------------------------
+|        ____ _ _   _   _       _          _        _   _                      |
+|       / ___(_) |_| | | |_   _| |__      / \   ___| |_(_) ___  _ __  ___      |
+|      | |  _| | __| |_| | | | | '_ \    / _ \ / __| __| |/ _ \| '_ \/ __|     |
+|      | |_| | | |_|  _  | |_| | |_) |  / ___ \ (__| |_| | (_) | | | \__ \     |
+|       \____|_|\__|_| |_|\__,_|_.__/  /_/   \_\___|\__|_|\___/|_| |_|___/     |
+|                                                                              |
+|                       Self-hosted runner registration                        |
+|                                                                              |
+--------------------------------------------------------------------------------
+
+# Authentication
+
+
+√ Connected to GitHub
+
+# Runner Registration
+
+Enter the name of the runner group to add this runner to: [press Enter for Default]
+
+Enter the name of runner: [press Enter for ip-172-31-30-107] ec2
+
+This runner will have the following labels: 'self-hosted', 'Linux', 'X64'
+Enter any additional labels (ex. label-1,label-2): [press Enter to skip]
+
+√ Runner successfully added
+√ Runner connection is good
+
+# Runner settings
+
+Enter name of work folder: [press Enter for _work]
+
+√ Settings Saved.
+```
+
+You should now be also able to see your newly created runner status as <b>Idle</b> under Github > Actions.
+
+---
+
+## 4. Set up Docker for Dockerization
+
+### 4.1. Create new repository on DockerHub
+
+Go to DockerHub's website, sign in, and create a new repository.
+
+<img src="/aws/create-repo.png" alt="" nextjs-docker />
+
+### 4.2. Dockerize our Next.js app
+
+Go back to your NextJS app Code Editor, and create a new directory under your app:
+
+```
+nextjs-aws-demo
+    |-.github
+        |-workflows
+```
+
+Create a new <b>Dockerfile</b> under your app:
+
+```
+nextjs-aws-demo
+    |-Dockerfile
+```
+
+```
+// Dockerfile
+
+FROM node:20-alpine3.18 as builder
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+EXPOSE 3000
+CMD ["npm", "run", "start"]
+
+```
+
+Go to your Github Repository and add in env secrets for your app if any. Make sure to add in your <b>Docker Username</b> and <b>Docker Password</b> as follows:
+
+<img src="/aws/secrets.png" alt="env secrets" />
+
+Go back to your Code Editor and under the workflows directory, create a <b>cicd.yaml</b> file. This will be for our CICD pipeline.
+
+```
+// cicd.yaml
+
+name: Deploy Next.js application
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Create .env file
+        run: |
+          echo "NEXT_PUBLIC_FIREBASE_API_KEY=${{ secrets.NEXT_PUBLIC_FIREBASE_API_KEY }}" >> .env
+          echo "NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=${{ secrets.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN }}" >> .env
+          echo "NEXT_PUBLIC_FIREBASE_PROJECT_ID=${{ secrets.NEXT_PUBLIC_FIREBASE_PROJECT_ID }}" >> .env
+          echo "NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=${{ secrets.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET }}" >> .env
+          echo "NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=${{ secrets.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID }}" >> .env
+          echo "NEXT_PUBLIC_FIREBASE_APP_ID=${{ secrets.NEXT_PUBLIC_FIREBASE_APP_ID }}" >> .env
+
+      - name: Build Docker image
+        run: docker build -t itslynn/styleforge-lynn:latest . // Replace this with your actual repository
+      - name: Login to DockerHub
+        run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
+      - name: Publish image to DockerHub
+        run: docker push itslynn/styleforge-lynn:latest // Replace this with your actual repository name
+
+  deploy:
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - name: Pull image from DockerHub
+        run: docker pull itslynn/styleforge-lynn:latest // Replace this with your actual repository name
+      - name: Delete old container
+        run: docker rm -f styleforge-lynn-container
+      - name: Run Docker container
+        run: docker run -d -p 3000:3000 --name styleforge-lynn-container itslynn/styleforge-lynn // Replace this with your actual repository name
+
+```
+
+### 4.3. Push to branch
+
+Once everything is completed, push your latest changes to Github, and our runner should start doing its thing after detecting a commit.
+
+The runner will start 2 jobs in sequential as defined in our cicd.yaml, <b>build</b> and <b>deploy</b>.
+
+It will start by creating an env file by copying the secrets we have defined, build a Docker Image of our entire app, login to our DockerHub account, and publish our app's Docker Image to our DockerHub. This entire process is called building.
+
+Once we have successfully created and published the Docker Image of our Nextjs app, the next step is to deploy.
+
+Now our runner will pull the published image from DockerHub, delete the old container, and run the latest Docker container on our exposed port 3000 of our AWS EC2 endpoint as defined.
