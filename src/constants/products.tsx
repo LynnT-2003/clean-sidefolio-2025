@@ -14,8 +14,18 @@ import prismaforge2 from "public/images/prismaforge2.png";
 import cyberpunk from "public/images/cyberpunk.png";
 import cyberpunk2 from "public/images/cyberpunk2.png";
 
-import motion from "public/images/motion.png";
-import motion2 from "public/images/motion2.png";
+import discord from "public/images/discord.jpg";
+import discord2 from "public/images/discord2.png";
+import discord3 from "public/images/discord3.png";
+
+import myproperty from "public/images/myproperty.png";
+import myproperty2 from "public/images/myproperty2.png";
+import myproperty3 from "public/images/myproperty3.png";
+import myproperty4 from "public/images/myproperty4.png";
+
+import tbhchatbot from "public/images/tbhchatbot.png";
+import tbhchatbot2 from "public/images/tbhchatbot2.png";
+import tbhchatbot3 from "public/images/tbhchatbot3.png";
 
 import lynnstore from "public/images/lynnstore.png";
 import lynnstore2 from "public/images/lynnstore2.png";
@@ -26,9 +36,11 @@ import threed2 from "public/images/threed2.png";
 import gsap from "public/images/gsap.png";
 import gsap2 from "public/images/gsap2.png";
 
+import github from "public/images/github.png";
+
 export const products = [
   {
-    href: "https://prismaforge.vercel.app/",
+    href: "https://christmasforge.vercel.app/",
     title: "ChristmasForge",
     description:
       "An AI powered web application to generate and transform images using custom-trained Stable Diffusion Models through image uploads.",
@@ -68,7 +80,7 @@ export const products = [
     ),
   },
   {
-    href: "https://mahavertex.com",
+    href: "https://mv-realty.vercel.app/",
     title: "MahaVertex Realty",
     description:
       "Fully mobile-responsive real estate website for a modern real estate company residing in Thailand, catered to the Burmese community.",
@@ -110,6 +122,21 @@ export const products = [
           methodologies in adapting to challenges and ensuring continuous
           improvement throughout the project&rsquo;s lifecycle.
         </p>
+      </div>
+    ),
+  },
+  {
+    href: "https://github.com/LynnT-2003/MY-Property-IOS-Storyboard",
+    title: "MYProperty - ABAC Property Finder",
+    description:
+      "An iOS application that helps students and users browse for properties for rent nearby Assumption University Suvarnabhumi Campus. Built together with a Content Management System using Sanity.io for admins and property managers to update details and availa",
+    thumbnail: myproperty2,
+    images: [myproperty3, myproperty4],
+    stack: ["Javascript", "OpenAI"],
+    slug: "my-property-ios",
+    content: (
+      <div>
+        <p></p>
       </div>
     ),
   },
@@ -174,15 +201,59 @@ export const products = [
       </div>
     ),
   },
+  // {
+  //   href: "https://plynnko-fun.vercel.app/Game",
+  //   title: "React Gesture Controlled Game App",
+  //   description:
+  //     "A gesture controlled game app built with Tensorflow and Handpose Model.",
+  //   thumbnail: motion,
+  //   images: [motion, motion2],
+  //   stack: ["Nextjs", "Tailwindcss", "Tensorflow", "Handpose Model"],
+  //   slug: "react-gesture",
+  //   content: (
+  //     <div>
+  //       <p></p>
+  //     </div>
+  //   ),
+  // },
   {
-    href: "https://plynnko-fun.vercel.app/Game",
-    title: "React Gesture Controlled Game App",
+    href: "https://github.com/LynnT-2003/Discord-GPT-3.5-Bot",
+    title: "Discord Chatbot - BladeRunner Inspired",
     description:
-      "A gesture controlled game app built with Tensorflow and Handpose Model.",
-    thumbnail: motion,
-    images: [motion, motion2],
-    stack: ["Nextjs", "Tailwindcss", "Tensorflow", "Handpose Model"],
+      "A Personal Companion Discord Chatbot, inspired by BladeRunner, build with Javascript and OpenAI to interact with users and engage in comforting conversations.",
+    thumbnail: discord,
+    images: [discord2, discord3],
+    stack: ["Javascript", "OpenAI"],
     slug: "react-gesture",
+    content: (
+      <div>
+        <p></p>
+      </div>
+    ),
+  },
+  {
+    href: "",
+    title: "TBH Chatbot - Mobile Reviews",
+    description:
+      "A chatbot for Facebook messenger so that we can help you find your dream smartphone  easier than ever.",
+    thumbnail: tbhchatbot,
+    images: [tbhchatbot2, tbhchatbot3],
+    stack: ["Javascript", "OpenAI"],
+    slug: "tbh-chatbot",
+    content: (
+      <div>
+        <p></p>
+      </div>
+    ),
+  },
+  {
+    href: "https://github.com/LynnT-2003",
+    title: "See more on my Github",
+    description: "Don't be shy. You can find more projects on my Github.",
+    thumbnail: github,
+    images: [],
+    stack: ["Javascript", "OpenAI"],
+    slug: "my-github",
     content: (
       <div>
         <p></p>
